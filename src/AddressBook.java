@@ -16,6 +16,10 @@ public class AddressBook {
         addressBook.remove(buddy.getName());
     }
 
+    public void printThis(String text){
+        System.out.println(text);
+    }
+
     public static void main(String[] args) {
         System.out.println("Address Book");
         BuddyInfo myBuddy = new BuddyInfo("John", "Ottawa", "8989891881");
