@@ -23,5 +23,6 @@ public class AddressBook {
         myBook.addBuddy(myBuddy);
         myBook.removeBuddy(myBuddy);
         System.out.println("Testing changes in a new commit");
+        // Adding some sample text to test changes
     }
 }
