@@ -22,5 +22,6 @@ public class AddressBook {
         AddressBook myBook = new AddressBook();
         myBook.addBuddy(myBuddy);
         myBook.removeBuddy(myBuddy);
+        System.out.println("Testing changes in a new commit");
     }
 }
