@@ -18,6 +18,8 @@ public class BuddyInfo {
         return address;
     }
 
+    public String getPhoneNumber(){ return phoneNumber; }
+
     private String name;
     private String address;
     private String phoneNumber;
@@ -25,5 +27,13 @@ public class BuddyInfo {
     public static void main(String[] args) {
         BuddyInfo buddyInfo = new BuddyInfo("Homer", "Homer's Address", "8888888888");
         System.out.println("Hello " + buddyInfo.getName());
+    }
+
+    public boolean equals(BuddyInfo buddy) {
+        return this.name.equals(buddy.getName()) && this.address.equals(buddy.getAddress()) && this.phoneNumber.equals(buddy.getPhoneNumber());
+    }
+
+    public String toString() {
+        return "Name: " + name + " Address: " + address + " Phone: " + phoneNumber;
     }
 }
