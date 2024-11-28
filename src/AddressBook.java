@@ -1,18 +1,23 @@
+import javax.swing.*;
 import java.util.*;
 
 public class AddressBook {
 
     private HashMap<String, String> addressBook;
+    public DefaultListModel<BuddyInfo> listAddressBook = new DefaultListModel<>();
+    public View myView;
 
     public AddressBook() {
         addressBook = new HashMap<String, String>();
     }
 
     public void addBuddy(BuddyInfo buddy) {
+        listAddressBook.addElement(buddy);
         addressBook.put(buddy.getName(), buddy.getAddress());
     }
 
     public void removeBuddy(BuddyInfo buddy){
+        listAddressBook.removeElement(buddy);
         addressBook.remove(buddy.getName());
     }
 
@@ -20,13 +25,16 @@ public class AddressBook {
         System.out.println(text);
     }
 
-    public static void main(String[] args) {
-        System.out.println("Address Book");
-        BuddyInfo myBuddy = new BuddyInfo("John", "Ottawa", "8989891881");
-        AddressBook myBook = new AddressBook();
-        myBook.addBuddy(myBuddy);
-        myBook.removeBuddy(myBuddy);
-        System.out.println("Testing changes in a new commit");
-        // Adding some sample text to test changes
+    public void setView(View V) {
+        V.model = this;
     }
+
+    public HashMap<String, String> getAddressBook(){
+        return addressBook;
+    }
+
+    public DefaultListModel<BuddyInfo> getListAddressBook(){
+        return listAddressBook;
+    }
+
 }
